@@ -17,6 +17,7 @@ RSpec.describe Player do
 
     describe 'take_damage' do
         it 'Takes 10HP away from the player' do
+            allow(Kernel).to receive(:rand).and_return 10
             expect {dave.take_damage}.to change{dave.hp}.by(-10)
         end
     end

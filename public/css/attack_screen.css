@@ -1,0 +1,23 @@
+#attack_details {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Black Ops One', cursive;
+    position: fixed;
+    left: 32.5%;
+}
+
+#ok_button {
+    text-align: center;
+    margin-top: 25%;
+    margin-left: 46.25%;
+    background-color: black; /* Green */
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+body {
+    background-color: rgb(103, 210, 249);
+}

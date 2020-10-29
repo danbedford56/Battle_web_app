@@ -1,0 +1,15 @@
+#names_form {
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    position: fixed;
+    top: 32.5%;
+    left: 32.5%;
+}
+
+body {
+    background-color: rgb(103, 210, 249);
+}
+
+h1 {
+    text-decoration: underline;
+}

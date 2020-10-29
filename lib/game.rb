@@ -7,7 +7,11 @@ class Game
     end
 
     def attack(player)
-        player.take_damage
+        return player.take_damage
+    end
+
+    def heal(player)
+        return player.gain_hp
     end
 
     def switch_turns

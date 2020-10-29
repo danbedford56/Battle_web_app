@@ -1,0 +1,21 @@
+#game_over {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Black Ops One', cursive;
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    animation:blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText{
+    0%{ color: #000; font-size: 50px;}
+    25%{ color: red; font-size: 75px;}
+    50%{ color: black; font-size: 50px;}
+    75%{ color: red; font-size: 75px;}
+    100%{ color: red; font-size: 50px;}
+}
+
+body {
+    background-color: rgb(103, 210, 249);
+}

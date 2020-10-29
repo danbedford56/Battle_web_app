@@ -1,13 +1,30 @@
-<%if @game.current_turn == @game.players[0]%>
-    <%= @game.players[0].name %> has attacked <%= @game.players[1].name %>
-    <br>
-    <%= @game.players[1].name %> lost 10 HP
-<%else%>
-    <%= @game.players[1].name %> has attacked <%= @game.players[0].name %>
-    <br>
-    <%= @game.players[0].name %> lost 10 HP
-<%end%>
+<link rel="stylesheet" type="text/css" href="/css/attack_screen.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
+<div id="attack_details">
+  <%if @has_attacked%>
+    <%if @game.current_turn == @game.players[0]%>
+        <%= @game.players[0].name %> has attacked <%= @game.players[1].name %>
+        <br>
+        <%= @game.players[1].name %> lost <%=@damage%> HP
+    <%else%>
+        <%= @game.players[1].name %> has attacked <%= @game.players[0].name %>
+        <br>
+        <%= @game.players[0].name %> lost <%=@damage%> HP
+    <%end%>
+  <%else%>  
+    <%if @game.current_turn == @game.players[0]%>
+        <%= @game.players[0].name %> has healed
+        <br>
+        <%= @game.players[0].name %> gained <%=@damage%> HP
+    <%else%>
+        <%= @game.players[1].name %> has healed
+        <br>
+        <%= @game.players[1].name %> gained <%=@damage%> HP
+    <%end%>
+  <%end%>
+</div>
 <br>
 <form action="/switch-turns" method="post">
-  <input type="submit" value="Ok">
+  <input type="submit" id="ok_button" value="Ok">
 </form>
