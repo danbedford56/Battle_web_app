@@ -1,8 +1,9 @@
 require 'game'
 
 RSpec.describe Game do
-    let(:mittens) { double('Mittens') }
-    let(:dave) { double('Dave') }
+    let(:mittens) { double('Mittens', :hp => 100) }
+    let(:dave) { double('Dave', :hp => 100) }
+    let(:dead_player) { double('Dead', :hp => 0) }
 
     subject { Game.new(dave, mittens) }
 
@@ -30,6 +31,24 @@ RSpec.describe Game do
         it 'Switches the turn' do
              subject.switch_turns
              expect(subject.current_turn).to eq mittens
+        end
+    end
+
+    describe 'game_over?' do
+        it 'Returns false if game is not over' do
+            expect(subject.game_over?).to eq false
+        end
+
+        it 'Returns true if game is over' do
+            finished_game = Game.new(mittens, dead_player)
+            expect(finished_game.game_over?).to eq true
+        end
+    end
+
+    describe 'loser' do
+        it 'Returns the losing player' do
+            finished_game = Game.new(mittens, dead_player)
+            expect(finished_game.loser).to eq dead_player
         end
     end
 end
