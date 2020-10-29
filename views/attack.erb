@@ -1,1 +1,5 @@
-<%= @player_1_name %> has attacked <%= @player_2_name %>
+<%= @game.players[0].name %> has attacked <%= @game.players[1].name %>
+<br>
+<%= @game.players[1].name %> lost 10 HP
+<br>
+<a href="/play">Ok</a>

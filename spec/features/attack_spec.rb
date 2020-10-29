@@ -3,5 +3,6 @@ feature 'Attacking' do
         sign_in_and_play
         click_link 'Attack'
         expect(page).to have_content 'Dave has attacked Mittens'
+        expect(page).to have_content 'Mittens lost 10 HP'
     end
 end
